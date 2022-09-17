@@ -1,20 +1,17 @@
+import { useSelector, useDispatch } from 'react-redux'
 import { Main } from "../../common/Main"
 import TaskBlock from "./TaskBlock"
-import { Input, Block } from "./styled"
+import { Block } from "./styled"
+import Form from './Form'
 
 const Tasks = () => {
+    const tasks = useSelector(({ tasks }) => tasks.tasks)
+    const content = tasks.map(task => (<TaskBlock key={task.id}>{task.content}</TaskBlock>))
     return (
         <Main>
             <Block>
-                <Input placeholder="Any tasks?" />
-                <TaskBlock>Lorem ipsum dol cos cos</TaskBlock>
-                <TaskBlock>lorem ipsum dol lorem ipsum dol lorem ipsum dol</TaskBlock>
-                <TaskBlock>lorem ipsum dol lorem ipsum dol lorem ipsum dol</TaskBlock>
-                <TaskBlock>lorem ipsum dol lorem ipsum dol lorem ipsum dol</TaskBlock>
-                <TaskBlock>lorem ipsum dol lorem ipsum dol lorem ipsum dol</TaskBlock>
-                <TaskBlock>lorem ipsum dol lorem ipsum dol lorem ipsum dol</TaskBlock>
-                <TaskBlock>lorem ipsum dol lorem ipsum dol lorem ipsum dol</TaskBlock>
-                <TaskBlock>lorem ipsum dol lorem ipsum dol lorem ipsum dol</TaskBlock>
+                <Form />
+                {content}
             </Block>
         </Main>
     )
