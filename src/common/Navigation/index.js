@@ -1,4 +1,4 @@
-import { Nav, NavElement } from "./styled"
+import { Nav, NavElement } from "./styled";
 
 const Navigation = () => {
   return (
@@ -7,6 +7,6 @@ const Navigation = () => {
       <NavElement>...</NavElement>
     </Nav>
   )
-}
+};
 
-export default Navigation
+export default Navigation;

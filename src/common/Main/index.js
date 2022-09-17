@@ -1,10 +1,11 @@
-import { Content } from "./styled"
+import { Content } from "./styled";
 
-export const Main = ({ children }) => {
-
+const Main = ({ children }) => {
     return (
         <Content>
             {children}
         </Content>
     )
-}
+};
+
+export default Main;

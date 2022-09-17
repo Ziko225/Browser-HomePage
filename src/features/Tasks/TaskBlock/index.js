@@ -1,15 +1,11 @@
-import { ContentBlock } from "./styled"
-import { Block, Button } from "./styled"
+import { ContentBlock } from "./styled";
 
-const TaskBlock = ({ children }) => {
+const TaskBlock = ({ children, buttonTask }) => {
     return (
         <ContentBlock>
-            <Block>
-                <Button>x</Button>
-            </Block>
             {children}
         </ContentBlock>
     )
-}
+};
 
-export default TaskBlock
+export default TaskBlock;
