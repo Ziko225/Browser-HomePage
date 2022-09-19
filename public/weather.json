@@ -1,0 +1,50 @@
+{
+    "data": [
+        {
+            "wind_cdir": "SW",
+            "rh": 98,
+            "pod": "d",
+            "lon": 38.5,
+            "pres": 652.2,
+            "timezone": "Africa/Johannesburg",
+            "ob_time": "2022-09-19 12:20",
+            "country_code": "TF",
+            "clouds": 0,
+            "ts": 1663590000,
+            "solar_rad": 106.6,
+            "state_code": "03",
+            "city_name": "Port-aux-Français",
+            "wind_spd": 1,
+            "slp": 1014.8,
+            "wind_cdir_full": "southwest",
+            "sunrise": "03:16",
+            "app_temp": 15.6,
+            "dni": 482.29,
+            "vis": 16,
+            "sources": [
+                "G0697"
+            ],
+            "h_angle": 45,
+            "dewpt": 15.2,
+            "snow": 0,
+            "aqi": 0,
+            "dhi": 44.9,
+            "wind_dir": 231,
+            "elev_angle": 8.3,
+            "ghi": 106.63,
+            "precip": 0,
+            "sunset": "15:04",
+            "lat": -78.5,
+            "uv": 1.7943,
+            "datetime": "2022-09-19:12",
+            "temp": 15.7,
+            "weather": {
+                "icon": "c01d",
+                "code": 800,
+                "description": "Clear sky"
+            },
+            "station": "G0697"
+        }
+    ],
+    "count": 1
+}

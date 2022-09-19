@@ -1,10 +1,9 @@
-import { Nav, NavElement } from "./styled";
+import { Nav } from "./styled";
 
-const Navigation = () => {
+const Navigation = ({ children }) => {
   return (
     <Nav>
-      <NavElement>☼  Warszawa 15C</NavElement>
-      <NavElement>...</NavElement>
+      {children}
     </Nav>
   )
 };

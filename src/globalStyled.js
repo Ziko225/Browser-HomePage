@@ -10,6 +10,6 @@ export default createGlobalStyle`
     background-attachment:fixed;
     background-repeat:no-repeat;
     color:${({ theme }) => theme.color.text};
+    font-family: 'Lato', sans-serif;
   }
-
 `

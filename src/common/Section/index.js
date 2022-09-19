@@ -1,6 +1,6 @@
 import { ContentBlock } from "./styled";
 
-const TaskBlock = ({ children, buttonTask }) => {
+const Section = ({ children }) => {
     return (
         <ContentBlock>
             {children}
@@ -8,4 +8,4 @@ const TaskBlock = ({ children, buttonTask }) => {
     )
 };
 
-export default TaskBlock;
+export default Section;
