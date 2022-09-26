@@ -5,7 +5,6 @@ import Main from "../../common/Main";
 import Section from '../../common/Section';
 import Form from './Form';
 
-
 const Tasks = () => {
     const dispatch = useDispatch();
     const tasks = useSelector(({ tasks }) => tasks.tasks);
@@ -30,4 +29,4 @@ const Tasks = () => {
     )
 };
 
-export default Tasks
+export default Tasks;
