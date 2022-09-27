@@ -1,17 +1,13 @@
-import { useState } from "react"
-import { Content, Button, Img, Block, Footer } from "./styled"
-import { ReactComponent as IconMenu } from './icons/bar.svg'
+import { useState } from "react";
+import { Content, Button, Img, Block, Footer } from "./styled";
+import { ReactComponent as IconMenu } from './icons/bar.svg';
 
 const ServicesGoogle = () => {
     let [showServicesBar, setShowServicesBar] = useState(false);
 
-    const clicker = () => {
-        setShowServicesBar(showServicesBar = !showServicesBar)
-    };
-
     return (
         <>
-            <Button onClick={() => clicker()}><IconMenu/></Button>
+            <Button bar={showServicesBar} onClick={() => setShowServicesBar(showServicesBar = !showServicesBar)}><IconMenu /></Button>
             <Content bar={showServicesBar}>
                 <Block href="https://mail.google.com/mail/?tab=rm">
                     <Img src={require("./icons/gmail.png")} alt=""></Img>
@@ -31,7 +27,7 @@ const ServicesGoogle = () => {
                 </Block>
                 <Block href="https://www.youtube.com/?tab=r1">
                     <Img src={require("./icons/youtube.png")} alt=""></Img>
-                    youtube
+                    Youtube
                 </Block>
                 <Block href="https://keep.google.com/u/0">
                     <Img src={require("./icons/keep.png")} alt=""></Img>
@@ -39,7 +35,7 @@ const ServicesGoogle = () => {
                 </Block>
                 <Block href="https://translate.google.pl/?hl=pl&tab=rT">
                     <Img src={require("./icons/translator.png")} alt=""></Img>
-                    translator
+                    Translator
                 </Block>
                 <Block href="https://drive.google.com/?tab=ro&authuser=0">
                     <Img src={require("./icons/drive.png")} alt=""></Img>
@@ -49,10 +45,10 @@ const ServicesGoogle = () => {
                     <Img src={require("./icons/images.png")} alt=""></Img>
                     Images
                 </Block>
-                <Footer href="https://www.google.pl/intl/pl/about/products?tab=rh">More</Footer>
+                <Footer href="https://www.google.pl/intl/pl/about/products?tab=rh">More services</Footer>
             </Content>
         </>
     )
-}
+};
 
-export default ServicesGoogle
+export default ServicesGoogle;

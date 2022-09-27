@@ -23,7 +23,6 @@ const Weather = () => {
             <Content>Waiting for GPS</Content>
         )
     }
-
 };
 
 export default Weather;

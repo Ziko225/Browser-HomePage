@@ -1,9 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
+import { getTasksFromLocalStorage } from './tasksLocalStorage';
 
-export const counterSlice = createSlice({
+export const tasksSlice = createSlice({
     name: "tasks",
     initialState: {
-        tasks: []
+        tasks: getTasksFromLocalStorage()
     },
     reducers: {
         addTask: ({ tasks }, { payload: task }) => {
@@ -16,6 +17,8 @@ export const counterSlice = createSlice({
     },
 })
 
-export const { removeTask, addTask } = counterSlice.actions
+export const { removeTask, addTask } = tasksSlice.actions;
 
-export default counterSlice.reducer
+export const selectTasks = state => state.tasks;
+
+export default tasksSlice.reducer;

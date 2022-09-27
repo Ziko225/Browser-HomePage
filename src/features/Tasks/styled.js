@@ -21,7 +21,6 @@ export const Button = styled.button`
     width:20px;
     height:20px;
     padding:1px;
-    color: ${({ theme }) => theme.color.black};
     background: none;
     border:none;
     transition:0.3s;

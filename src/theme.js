@@ -1,7 +1,9 @@
 export const theme = {
   color: {
-    background: "#222",
     text: "#eee",
-    shadow: "#111"
+    hover: "#444",
+    input: "#333",
+    background: "#333",
+    shadow: "#111",
   }
 }

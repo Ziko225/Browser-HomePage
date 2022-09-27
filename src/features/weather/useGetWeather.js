@@ -9,8 +9,7 @@ const useGetWeather = () => {
         const getWeather = (longitude, latitude) => {
             const options = {
                 method: 'GET',
-                url: './data.json',
-                // url: 'https://api.weatherbit.io/v2.0/current',
+                url: 'https://api.weatherbit.io/v2.0/current',
                 params: {
                     lon: `${longitude}`,
                     lat: `${latitude}`,
@@ -49,7 +48,7 @@ const useGetWeather = () => {
             }
         };
 
-        setTimeout(() => getLocation(),500)
+        setTimeout(() => getLocation(), 500)
 
     }, []);
 

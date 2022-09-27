@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Input = styled.input`
-    background-color:#555;
+    background-color:${({ theme }) => theme.color.input};
     border-radius: 10px;
     flex-grow: 2;
     color:${({ theme }) => theme.color.text};
