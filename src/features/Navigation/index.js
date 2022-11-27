@@ -1,9 +1,12 @@
+import ServicesGoogle from "./ServicesGoogle";
 import { Nav } from "./styled";
+import Weather from "./weather";
 
-const Navigation = ({ children }) => {
+const Navigation = () => {
   return (
     <Nav>
-      {children}
+      <Weather />
+      <ServicesGoogle />
     </Nav>
   )
 };
