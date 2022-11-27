@@ -6,4 +6,4 @@ export const theme = {
     background: "#222",
     shadow: "#111",
   }
-}
+};

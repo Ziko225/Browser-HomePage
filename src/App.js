@@ -1,10 +1,10 @@
 import { ThemeProvider } from "styled-components";
-import Navigation from "./common/Navigation";
+import Navigation from "./features/Navigation";
 import ServicesGoogle from "./features/ServicesGoogle";
 import Tasks from "./features/Tasks";
 import Weather from "./features/weather";
 import GlobalStyle from "./globalStyled";
-import { theme } from "./theme"
+import { theme } from "./theme";
 
 function App() {
   return (
@@ -17,6 +17,6 @@ function App() {
       <Tasks />
     </ThemeProvider>
   );
-}
+};
 
 export default App;
