@@ -13,9 +13,9 @@ export const ContentBlock = styled.div`
     box-shadow:2px 2px 4px ${({ theme }) => theme.color.shadow};
     transition:0.3s;
     :hover{
-        box-shadow: 0px 0px 5px 1px${({ theme }) => theme.color.text};
+        box-shadow: 0px 0px 8px 1px${({ theme }) => theme.color.text};
     };
-`
+`;
 
 export const Block = styled.section`
     display: flex;  
@@ -25,16 +25,17 @@ export const Block = styled.section`
     padding:10px;
     max-width:450px;
     height:100%;
-`
+`;
+
 export const TaskElement = styled.div`
     margin-top:-10px;
     width:110%;
     display: flex;
     flex-direction:row-reverse;
     justify-content:space-between;
-`
+`;
 
-export const Button = styled.button`
+export const StyledButton = styled.button`
     width:20px;
     height:20px;
     padding:1px;
@@ -47,4 +48,12 @@ export const Button = styled.button`
         color:red;
         transform:scale(1.5)
     };
-`
+`;
+
+export const StyledInput = styled.input`
+    background-color:${({ theme }) => theme.color.input};
+    border-radius: 10px;
+    color:${({ theme }) => theme.color.text};
+    padding: 5px 10px;
+    margin: 20px;
+`;

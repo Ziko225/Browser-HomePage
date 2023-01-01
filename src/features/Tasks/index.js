@@ -1,27 +1,42 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { Block, TaskElement, Button, ContentBlock } from "./styled";
-import { removeTask } from './tasksSlice';
-import Form from './Form';
+import { Block, TaskElement, StyledButton, ContentBlock, StyledInput } from "./styled";
+import { useState } from 'react';
 
 const Tasks = () => {
-    const dispatch = useDispatch();
-    const tasks = useSelector(({ tasks }) => tasks.tasks);
-    const content = tasks.map(task => (
-        <ContentBlock key={task.id}>
+    const [tasks, setTasks] = useState([]);
+    const [name, setName] = useState("");
+
+    const addTask = (e) => {
+        e.preventDefault();
+        setTasks([...tasks, name]);
+        setName("");
+    };
+
+    const removeTask = (index) => {
+        setTasks([
+            ...tasks.slice(0, index),
+            ...tasks.slice(index + 1),
+        ]);
+    };
+
+    const content = tasks.map((task, index) => (
+        <ContentBlock>
             <TaskElement >
-                <Button onClick={() => dispatch(removeTask(task.id))}>x</Button>
+                <StyledButton onClick={() => removeTask(index)}>x</StyledButton>
             </TaskElement>
-            {task.content}
+            {task}
         </ContentBlock>
     ))
 
     return (
-        <Block>
-            <Form>
-                {Button}
-            </Form>
-            {content}
-        </Block>
+        <>
+            <form onSubmit={addTask}>
+                <StyledInput onChange={(e) => setName(e.currentTarget.value)} value={name} placeholder="Any task?"></StyledInput>
+            </form>
+            <Block>
+
+                {content}
+            </Block>
+        </>
     )
 };
 
