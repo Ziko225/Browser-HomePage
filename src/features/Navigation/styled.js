@@ -7,4 +7,4 @@ export const Nav = styled.nav`
   align-items: flex-start;
   width: 100%;
   height: 50px;
-`
+`;

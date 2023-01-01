@@ -16,13 +16,16 @@ const Weather = () => {
             return (
                 <Content>Something wrong</Content>
             )
-        case "loading": return (
+        case "init": return (
             <Content>Loading...</Content>
         )
-        default: return (
+        case "waitGPS": return (
             <Content>Waiting for GPS</Content>
         )
-    }
+        default: return (
+            <Content>Something wrong</Content>
+        )
+    };
 };
 
 export default Weather;

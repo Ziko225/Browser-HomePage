@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const useGetWeather = () => {
-    const [status, setStatus] = useState("loading");
+    const [status, setStatus] = useState("init");
     const [data, setData] = useState();
 
     useEffect(() => {
@@ -17,39 +17,35 @@ const useGetWeather = () => {
                 },
             };
 
-            axios.request(options).then(function (response) {
-                setData(response.data.data[0])
-                setStatus("ok")
-            }).catch(function (error) {
-                console.error(error);
-                setStatus("error")
-            });
+            axios.request(options)
+                .then((response) => {
+                    setData(response.data.data[0]);
+                    setStatus("ok");
+                }).catch(() => {
+                    setStatus("error");
+                });
         };
 
         const getCoords = (position) => {
             try {
-                let latitude = position.coords.latitude.toFixed(2)
-                let longitude = position.coords.longitude.toFixed(2)
-                getWeather(longitude, latitude)
-            } catch (error) {
-                console.error(error)
-                setStatus("error")
-            }
+                const latitude = position.coords.latitude.toFixed(2);
+                const longitude = position.coords.longitude.toFixed(2);
+                getWeather(longitude, latitude);
+            } catch {
+                setStatus("error");
+            };
         };
 
         const getLocation = () => {
             try {
-                navigator.geolocation.getCurrentPosition(getCoords, setStatus("error"))
-                setStatus("")
+                navigator.geolocation.getCurrentPosition(getCoords, setStatus("error"));
+                setStatus("waitGPS");
             }
-            catch (error) {
-                setStatus("error")
-                console.error(error)
-            }
+            catch {
+                setStatus("error");
+            };
         };
-
-        setTimeout(() => getLocation(), 500)
-
+        setTimeout(() => getLocation(), 500);
     }, []);
 
     return { data, status };
