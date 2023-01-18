@@ -1,15 +1,28 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Content, Button, Img, Block, Footer } from "./styled";
 import { ReactComponent as IconMenu } from './icons/bar.svg';
 
 const ServicesGoogle = () => {
     const [showServicesBar, setShowServicesBar] = useState(false);
+    const wrapperRef = useRef(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+                setShowServicesBar(false);
+            };
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [wrapperRef]);
 
     return (
         <>
-            <Button bar={showServicesBar} onClick={() => setShowServicesBar(!showServicesBar)}><IconMenu /></Button>
+            <Button bar={showServicesBar} onClick={(e) => setShowServicesBar(!showServicesBar)}><IconMenu /></Button>
             {showServicesBar &&
-                <Content>
+                <Content ref={wrapperRef}>
                     <Block href="https://mail.google.com/mail/?tab=rm">
                         <Img src={require("./icons/gmail.png")} alt=""></Img>
                         Gmail
@@ -47,7 +60,8 @@ const ServicesGoogle = () => {
                         Images
                     </Block>
                     <Footer href="https://www.google.pl/intl/pl/about/products?tab=rh">More services</Footer>
-                </Content>}
+                </Content>
+            }
         </>
     );
 };
