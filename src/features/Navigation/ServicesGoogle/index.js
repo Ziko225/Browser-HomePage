@@ -19,10 +19,10 @@ const ServicesGoogle = () => {
     }, [wrapperRef]);
 
     return (
-        <>
-            <Button bar={showServicesBar} onClick={(e) => setShowServicesBar(!showServicesBar)}><IconMenu /></Button>
+        <div ref={wrapperRef}>
+            <Button bar={showServicesBar} onClick={() => setShowServicesBar(!showServicesBar)}><IconMenu /></Button>
             {showServicesBar &&
-                <Content ref={wrapperRef}>
+                <Content>
                     <Block href="https://mail.google.com/mail/?tab=rm">
                         <Img src={require("./icons/gmail.png")} alt=""></Img>
                         Gmail
@@ -62,7 +62,7 @@ const ServicesGoogle = () => {
                     <Footer href="https://www.google.pl/intl/pl/about/products?tab=rh">More services</Footer>
                 </Content>
             }
-        </>
+        </div>
     );
 };
 
