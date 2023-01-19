@@ -7,7 +7,7 @@ export default createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background-image: url(${backgroundLink && backgroundLink.match(/\.(jpeg|jpg|gif|png)$/) != null ? backgroundLink : background});
+    background-image: url(${backgroundLink && backgroundLink.match(/^http[^\?]*.(jpg|jpeg|gif|png|tiff|bmp)(\?(.*))?$/gmi) != null ? backgroundLink : background});
     background-size: cover ;
     background-position: center;
     background-attachment: fixed;
