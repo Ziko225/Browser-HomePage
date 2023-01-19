@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components";
 
 export const Content = styled.section`
-    position: fixed;
-    top: 0;
-    margin: 20vh 40vw 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 75px 30px 0;
 `;
 
 export const OpenBarButton = styled.button`
@@ -23,6 +24,7 @@ export const SettingBlock = styled.div`
     background-color: ${({ theme }) => theme.color.background};
     padding: 10px 30px;
     border-radius: 6px;
+    min-width: 240px;
 `;
 
 export const FormBlock = styled.form`
