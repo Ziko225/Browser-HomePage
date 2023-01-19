@@ -13,7 +13,7 @@ export const ContentBlock = styled.div`
     box-shadow: 2px 2px 4px ${({ theme }) => theme.color.dark};
     transition: 0.3s;
     :hover{
-        box-shadow: 0px 0px 8px 1px${({ theme }) => theme.color.lightGrey};
+        box-shadow: 0px 0px 8px 1px${({ theme }) => theme.color.smoke};
     };
 `;
 
@@ -53,7 +53,7 @@ export const StyledButton = styled.button`
 export const StyledInput = styled.input`
     background-color:${({ theme }) => theme.color.darkGrey};
     border-radius: 10px;
-    color:${({ theme }) => theme.color.lightGrey};
+    color:${({ theme }) => theme.color.smoke};
     padding: 5px 10px;
     margin: 20px;
 `;

@@ -42,7 +42,7 @@ export const Block = styled.a`
     text-decoration: none;
     align-items: center;
     border-radius: 10px;
-    color: ${({ theme }) => theme.color.lightGrey};
+    color: ${({ theme }) => theme.color.smoke};
     cursor: pointer;
     :hover{
         background-color: ${({ theme }) => theme.color.grey};
@@ -50,11 +50,11 @@ export const Block = styled.a`
 `;
 
 export const Footer = styled.a`
-    color: ${({ theme }) => theme.color.lightGrey};
+    color: ${({ theme }) => theme.color.smoke};
     grid-column-start: 2;
     text-decoration: none;
     :hover{
-        border-bottom: 1px solid ${({ theme }) => theme.color.lightGrey};
+        border-bottom: 1px solid ${({ theme }) => theme.color.smoke};
     }
 `;
 

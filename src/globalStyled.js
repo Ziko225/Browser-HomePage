@@ -12,7 +12,7 @@ export default createGlobalStyle`
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    color: ${({ theme }) => theme.color.lightGrey};
+    color: ${({ theme }) => theme.color.smoke};
     font-family: 'Lato', sans-serif;
   }
 `;

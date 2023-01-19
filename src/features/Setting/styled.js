@@ -39,7 +39,7 @@ export const StyledInput = styled.input`
 `;
 
 export const StyledButton = styled.button`
-    background-color: ${({ theme }) => theme.color.lightGrey};
+    background-color: ${({ theme }) => theme.color.smoke};
     border: none;
     border-radius: 6px;
     padding: 5px 10px;
@@ -55,7 +55,7 @@ export const StyledButton = styled.button`
     }
     ${({ setDefaultButton }) => setDefaultButton && css`
         background: none;
-        color: ${({ theme }) => theme.color.lightGrey};
+        color: ${({ theme }) => theme.color.smoke};
     `}
 `;
 
