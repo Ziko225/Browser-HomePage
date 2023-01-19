@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Content = styled.section`
     position: fixed;
@@ -31,17 +31,33 @@ export const FormBlock = styled.form`
 `;
 
 export const StyledInput = styled.input`
-    padding: 10px;
+    padding: 7px;
     border-radius: 7px;
     margin: 10px 0;
 `;
 
 export const StyledButton = styled.button`
-    background-color: ${({ theme }) => theme.color.text};
+    background-color: ${({ theme }) => theme.color.lightGrey};
     border: none;
     border-radius: 6px;
     padding: 5px 10px;
     align-self: flex-end;
     margin-bottom: 10px;
     cursor: pointer;
+    color: ${({ theme }) => theme.color.dark};
+    :hover{
+        filter: brightness(85%);
+    }
+    :active{
+        filter: brightness(110%);
+    }
+    ${({ setDefaultButton }) => setDefaultButton && css`
+        background: none;
+        color: ${({ theme }) => theme.color.lightGrey};
+    `}
+`;
+
+export const ButtonBlock = styled.div`
+    display: flex;
+    justify-content: space-between;
 `;

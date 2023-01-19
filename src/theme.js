@@ -1,9 +1,9 @@
 export const theme = {
   color: {
-    text: "#eee",
-    hover: "#444",
-    input: "#333",
+    lightGrey: "#eee",
+    grey: "#444",
+    darkGrey: "#333",
     background: "#222",
-    shadow: "#111",
+    dark: "#111",
   }
 };

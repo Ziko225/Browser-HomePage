@@ -10,10 +10,10 @@ export const Button = styled.div`
     height: 40px;
     border-radius: 50%;
     :hover{
-        background-color: ${({ theme }) => theme.color.hover};
+        background-color: ${({ theme }) => theme.color.grey};
     }
     ${({ bar }) => bar && css`
-        background-color: ${({ theme }) => theme.color.hover};
+        background-color: ${({ theme }) => theme.color.grey};
     `}
 `;
 
@@ -42,19 +42,19 @@ export const Block = styled.a`
     text-decoration: none;
     align-items: center;
     border-radius: 10px;
-    color: ${({ theme }) => theme.color.text};
+    color: ${({ theme }) => theme.color.lightGrey};
     cursor: pointer;
     :hover{
-        background-color: ${({ theme }) => theme.color.hover};
+        background-color: ${({ theme }) => theme.color.grey};
     }
 `;
 
 export const Footer = styled.a`
-    color: ${({ theme }) => theme.color.text};
+    color: ${({ theme }) => theme.color.lightGrey};
     grid-column-start: 2;
     text-decoration: none;
     :hover{
-        border-bottom: 1px solid ${({ theme }) => theme.color.text};
+        border-bottom: 1px solid ${({ theme }) => theme.color.lightGrey};
     }
 `;
 

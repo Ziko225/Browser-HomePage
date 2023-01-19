@@ -1,4 +1,4 @@
-import { OpenBarButton, Content, SettingBlock, StyledInput, FormBlock, StyledButton } from "./styled";
+import { OpenBarButton, Content, SettingBlock, StyledInput, FormBlock, StyledButton, ButtonBlock } from "./styled";
 import { ReactComponent as SettingIco } from './settingIco.svg';
 import { useEffect } from "react";
 import { useRef } from "react";
@@ -20,16 +20,21 @@ const Setting = () => {
         };
     }, [wrapperRef]);
 
-    const changeBackground = (e) => {
-        e.preventDefault();
+    const changeBackground = (event) => {
+        event.preventDefault();
+        if (link.length > 5) {
+            localStorage.setItem("bglink", link)
+            setTimeout(() => {
+                document.location.reload()
+            }, 300);
+        }
+    };
+
+    const clearBackground = () => {
         localStorage.setItem("bglink", link)
         setTimeout(() => {
             document.location.reload()
         }, 300);
-    };
-
-    const clearBackground = () => {
-        localStorage.setItem("bglink", "")
     }
 
     return (
@@ -38,12 +43,14 @@ const Setting = () => {
             {openSettingBar &&
                 <SettingBlock>
                     <h2>Setting</h2>
-                    <FormBlock onSubmit={(e) => changeBackground(e)}>
+                    <FormBlock onSubmit={(event) => changeBackground(event)}>
                         Background image
                         <StyledInput value={link} onChange={(e) => setLink(e.currentTarget.value)} placeholder="Link to img here" />
+                        <ButtonBlock>
                             <StyledButton>Save</StyledButton>
+                            <StyledButton setDefaultButton onClick={() => clearBackground()}>Set default</StyledButton>
+                        </ButtonBlock>
                     </FormBlock>
-
                 </SettingBlock>
             }
         </Content>

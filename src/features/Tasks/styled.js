@@ -5,55 +5,55 @@ export const ContentBlock = styled.div`
     align-items: center;
     flex-direction: column;
     width: 150px;
-    min-height:50px;
+    min-height: 50px;
     background-color: ${({ theme }) => theme.color.background};
     margin: 20px;
     padding: 10px;
     border-radius: 10px;
-    box-shadow:2px 2px 4px ${({ theme }) => theme.color.shadow};
-    transition:0.3s;
+    box-shadow: 2px 2px 4px ${({ theme }) => theme.color.dark};
+    transition: 0.3s;
     :hover{
-        box-shadow: 0px 0px 8px 1px${({ theme }) => theme.color.text};
+        box-shadow: 0px 0px 8px 1px${({ theme }) => theme.color.lightGrey};
     };
 `;
 
 export const Block = styled.section`
     display: flex;  
-    flex-wrap:wrap;
-    flex-direction:row;
-    align-items:center;
-    padding:10px;
-    max-width:450px;
-    height:100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    max-width: 450px;
+    height: 100%;
 `;
 
 export const TaskElement = styled.div`
-    margin-top:-10px;
-    width:110%;
+    margin-top: -10px;
+    width: 110%;
     display: flex;
-    flex-direction:row-reverse;
-    justify-content:space-between;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 `;
 
 export const StyledButton = styled.button`
-    width:20px;
-    height:20px;
-    padding:1px;
+    width: 20px;
+    height: 20px;
+    padding: 1px;
     background: none;
-    border:none;
-    transition:0.3s;
-    font-size:20px;
+    border: none;
+    transition: 0.3s;
+    font-size: 20px;
     cursor: pointer;
     :hover{
-        color:red;
-        transform:scale(1.5)
+        color: red;
+        transform: scale(1.5);
     };
 `;
 
 export const StyledInput = styled.input`
-    background-color:${({ theme }) => theme.color.input};
+    background-color:${({ theme }) => theme.color.darkGrey};
     border-radius: 10px;
-    color:${({ theme }) => theme.color.text};
+    color:${({ theme }) => theme.color.lightGrey};
     padding: 5px 10px;
     margin: 20px;
 `;
