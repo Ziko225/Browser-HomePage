@@ -4,11 +4,13 @@ export const Content = styled.section`
     position: absolute;
     bottom: 0;
     right: 0;
-    margin: 0 75px 30px 0;
+    margin: 0 85px 50px 0;
 `;
 
 export const OpenBarButton = styled.button`
     display: flex;
+    padding: 10px;
+    border-radius: 50%;
     position: fixed;
     align-self: end;
     margin: 20px 20px 20px auto;
@@ -18,11 +20,17 @@ export const OpenBarButton = styled.button`
     cursor: pointer;
     bottom: 0;
     right: 0;
+    :hover{
+        background-color: ${({ theme }) => theme.color.grey};
+    }
+    ${({ open }) => open && css`
+        background-color: ${({ theme }) => theme.color.grey};
+    `}
 `;
 
 export const SettingBlock = styled.div`
     background-color: ${({ theme }) => theme.color.background};
-    padding: 10px 30px;
+    padding: 20px 30px;
     border-radius: 6px;
     min-width: 240px;
 `;

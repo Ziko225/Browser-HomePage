@@ -1,18 +1,20 @@
 import { createGlobalStyle } from "styled-components";
-import background from "./background.jpg"
 
 const backgroundLink = localStorage.getItem("bglink");
+const darkTheme = JSON.parse(localStorage.getItem("isDarkTheme") || false);
+const backgroundImg = require(darkTheme ? "./background/backgroundDark.jpg" : "./background/backgroundLight.jpg");
 
 export default createGlobalStyle`
-  body {
-    margin: 0;
-    padding: 0;
-    background-image: url(${backgroundLink && backgroundLink.match(/^http[^\?]*.(jpg|jpeg|gif|png|tiff|bmp)(\?(.*))?$/gmi) != null ? backgroundLink : background});
-    background-size: cover ;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    color: ${({ theme }) => theme.color.smoke};
-    font-family: 'Lato', sans-serif;
-  }
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url(${backgroundLink && backgroundLink.match(/^http[^\?]*.(jpg|jpeg|gif|png|tiff|bmp)(\?(.*))?$/gmi) != null ? backgroundLink : backgroundImg});
+        background-size: cover ;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        color: ${({ theme }) => theme.color.smoke};
+        font-size: 700;
+        font-family: 'Lato', sans-serif; 
+    }
 `;

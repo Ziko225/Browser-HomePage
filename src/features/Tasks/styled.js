@@ -53,6 +53,7 @@ export const StyledButton = styled.button`
 export const StyledInput = styled.input`
     background-color:${({ theme }) => theme.color.darkGrey};
     border-radius: 10px;
+    border-color: ${({ theme }) => theme.color.darkGrey};
     color:${({ theme }) => theme.color.smoke};
     padding: 5px 10px;
     margin: 20px;

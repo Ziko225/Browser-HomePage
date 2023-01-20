@@ -41,7 +41,7 @@ const Setting = () => {
 
     return (
         <Content ref={wrapperRef}>
-            <OpenBarButton onClick={() => setOpenSettingBar(!openSettingBar)}><SettingIco /></OpenBarButton>
+            <OpenBarButton open={openSettingBar} onClick={() => setOpenSettingBar(!openSettingBar)}><SettingIco /></OpenBarButton>
             {openSettingBar &&
                 <SettingBlock>
                     <HeaderBlock><Titile>Setting</Titile> <ThemeButton /></HeaderBlock>
