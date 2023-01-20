@@ -21,13 +21,13 @@ export const ThemeSwitcher = styled.button`
     min-width: 47px;
     margin-left: 12.47px;
     cursor: pointer;
-    background-color: ${({ theme }) => theme.color.lightGrey};
+    background-color: ${({ theme }) => theme.color.darkGrey};
 `;
 
 export const StyledThemeIco = styled(themeIco)`
     border-radius: 50%;
-    color: ${({ theme }) => theme.color.lightBG};
-    background-color: ${({ theme }) => theme.color.white};
+    color: ${({ theme }) => theme.color.background};
+    background-color: ${({ theme }) => theme.color.lightGrey};
     margin: 2.5px;
     transition: 500ms;
 

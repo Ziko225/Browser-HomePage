@@ -9,6 +9,7 @@ export const Button = styled.div`
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    color: ${({ theme }) => theme.color.white};
     :hover{
         background-color: ${({ theme }) => theme.color.grey};
     }

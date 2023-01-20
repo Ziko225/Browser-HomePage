@@ -56,4 +56,7 @@ export const StyledInput = styled.input`
     color:${({ theme }) => theme.color.smoke};
     padding: 5px 10px;
     margin: 20px;
+    ::placeholder{
+        color:${({ theme }) => theme.color.lightGrey};
+    }
 `;
