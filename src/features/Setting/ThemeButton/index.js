@@ -4,12 +4,16 @@ import { StyledThemeIco, ThemeCaption, ThemeContainer, ThemeSwitcher } from "./s
 const ThemeButton = () => {
     const darkThemeId = "isDarkTheme";
     const [isDarkTheme, setIsDarkTheme] = useState(JSON.parse(localStorage.getItem(darkThemeId) || false));
+    const [isToggled, setIsToggled] = useState(false);
 
     const toggleTheme = () => {
-        setIsDarkTheme(!isDarkTheme);
-        setInterval(() => {
-            document.location.reload();
-        }, 400);
+        if (!isToggled) {
+            setIsToggled(true);
+            setIsDarkTheme(!isDarkTheme);
+            setInterval(() => {
+                document.location.reload();
+            }, 400);
+        }
     };
 
     useEffect(() => {
