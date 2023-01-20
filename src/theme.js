@@ -23,8 +23,8 @@ export const lightTheme = {
         smoke: "#222b",
         lightGrey: "#555",
         red: "#f00",
-        grey: "#9997",
-        darkGrey: "#bbb4",
+        grey: "#fff7",
+        darkGrey: "#fff9",
         background: "#eee8",
         dark: "#fff5",
     }
