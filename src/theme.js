@@ -5,10 +5,11 @@ const breakpoint = {
 export const DarkTheme = {
     breakpoint,
     color: {
-        white: "#eee",
+        white: "#fff",
         smoke: "#ccc",
         lightGrey: "#aaa",
-        grey: "#444",
+        red: "#f00",
+        grey: "#4448",
         darkGrey: "#3339",
         background: "#222c",
         dark: "#111",
@@ -18,9 +19,10 @@ export const DarkTheme = {
 export const lightTheme = {
     breakpoint,
     color: {
-        white: "#0006",
-        smoke: "#333",
+        white: "#000",
+        smoke: "#222b",
         lightGrey: "#555",
+        red: "#f00",
         grey: "#9997",
         darkGrey: "#bbb4",
         background: "#eee8",

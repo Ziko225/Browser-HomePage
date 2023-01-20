@@ -16,11 +16,11 @@ export const OpenBarButton = styled.button`
     margin: 20px 20px 20px auto;
     border: none;
     background: none;
-    color: ${({ theme }) => theme.color.white};;
+    color: ${({ theme }) => theme.color.smoke};
     cursor: pointer;
     bottom: 0;
     right: 0;
-    :hover{
+    &:hover {
         background-color: ${({ theme }) => theme.color.grey};
     }
     ${({ open }) => open && css`
@@ -65,10 +65,10 @@ export const StyledButton = styled.button`
     margin-bottom: 10px;
     cursor: pointer;
     color: ${({ theme }) => theme.color.dark};
-    :hover{
+    &:hover {
         filter: brightness(85%);
     }
-    :active{
+    &:active {
         filter: brightness(110%);
     }
     ${({ setDefaultButton }) => setDefaultButton && css`

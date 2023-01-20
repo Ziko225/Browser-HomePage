@@ -9,8 +9,8 @@ export const Button = styled.div`
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    color: ${({ theme }) => theme.color.white};
-    :hover{
+    color: ${({ theme }) => theme.color.smoke};
+    &:hover {
         background-color: ${({ theme }) => theme.color.grey};
     }
     ${({ bar }) => bar && css`
@@ -45,7 +45,7 @@ export const Block = styled.a`
     border-radius: 10px;
     color: ${({ theme }) => theme.color.smoke};
     cursor: pointer;
-    :hover{
+    &:hover {
         background-color: ${({ theme }) => theme.color.grey};
     }
 `;
@@ -54,7 +54,7 @@ export const Footer = styled.a`
     color: ${({ theme }) => theme.color.smoke};
     grid-column-start: 2;
     text-decoration: none;
-    :hover{
+    &:hover {
         border-bottom: 1px solid ${({ theme }) => theme.color.smoke};
     }
 `;

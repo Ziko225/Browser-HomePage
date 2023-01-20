@@ -31,7 +31,7 @@ export const StyledThemeIco = styled(themeIco)`
     margin: 2.5px;
     transition: 500ms;
 
-    ${({ darkTheme }) => darkTheme && css`
+    ${({ $darkTheme }) => $darkTheme && css`
         transform: translate(100%);
     `}
 `;

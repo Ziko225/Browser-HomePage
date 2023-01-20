@@ -19,7 +19,7 @@ const ThemeButton = () => {
     return (
         <ThemeContainer>
             <ThemeCaption >DARK MODE</ThemeCaption>
-            <ThemeSwitcher onClick={() => toggleTheme()}><StyledThemeIco darkTheme={isDarkTheme} /></ThemeSwitcher>
+            <ThemeSwitcher onClick={() => toggleTheme()}><StyledThemeIco $darkTheme={isDarkTheme} /></ThemeSwitcher>
         </ThemeContainer>
     );
 };

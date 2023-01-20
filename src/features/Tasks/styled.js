@@ -12,9 +12,9 @@ export const ContentBlock = styled.div`
     border-radius: 10px;
     box-shadow: 2px 2px 4px ${({ theme }) => theme.color.dark};
     transition: 0.3s;
-    :hover{
+    &:hover {
         box-shadow: 0px 0px 8px 1px${({ theme }) => theme.color.smoke};
-    };
+    }
 `;
 
 export const Block = styled.section`
@@ -43,11 +43,11 @@ export const StyledButton = styled.button`
     border: none;
     transition: 0.3s;
     font-size: 20px;
+    color: ${({ theme }) => theme.color.smoke};
     cursor: pointer;
-    :hover{
-        color: red;
-        transform: scale(1.5);
-    };
+    &:hover {
+        color: ${({ theme }) => theme.color.red};
+    }
 `;
 
 export const StyledInput = styled.input`
@@ -57,7 +57,7 @@ export const StyledInput = styled.input`
     color:${({ theme }) => theme.color.smoke};
     padding: 5px 10px;
     margin: 20px;
-    ::placeholder{
-        color:${({ theme }) => theme.color.lightGrey};
+    &::placeholder {
+        color: ${({ theme }) => theme.color.lightGrey};
     }
 `;
