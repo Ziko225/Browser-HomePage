@@ -3,17 +3,19 @@ import Navigation from "./features/Navigation";
 import Setting from "./features/Setting";
 import Tasks from "./features/Tasks";
 import GlobalStyle from "./globalStyled";
-import { theme } from "./theme";
+import { lightTheme, DarkTheme } from "./theme";
 
 function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Navigation />
-      <Tasks />
-      <Setting />
-    </ThemeProvider>
-  );
+    const isDarkTheme = (JSON.parse(localStorage.getItem("isDarkTheme") || false))
+
+    return (
+        <ThemeProvider theme={isDarkTheme ? DarkTheme : lightTheme}>
+            <GlobalStyle />
+            <Navigation />
+            <Tasks />
+            <Setting />
+        </ThemeProvider>
+    );
 };
 
 export default App;

@@ -1,4 +1,4 @@
-import { OpenBarButton, Content, SettingBlock, StyledInput, FormBlock, StyledButton, ButtonBlock } from "./styled";
+import { OpenBarButton, Content, Titile, SettingBlock, StyledInput, FormBlock, StyledButton, ButtonBlock, HeaderBlock } from "./styled";
 import { ReactComponent as SettingIco } from './settingIco.svg';
 import { useEffect } from "react";
 import { useRef } from "react";
@@ -9,6 +9,7 @@ const Setting = () => {
     const [openSettingBar, setOpenSettingBar] = useState();
     const wrapperRef = useRef(null);
     const [link, setLink] = useState("");
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
@@ -43,7 +44,7 @@ const Setting = () => {
             <OpenBarButton onClick={() => setOpenSettingBar(!openSettingBar)}><SettingIco /></OpenBarButton>
             {openSettingBar &&
                 <SettingBlock>
-                    <h2>Setting</h2> <ThemeButton />
+                    <HeaderBlock><Titile>Setting</Titile> <ThemeButton /></HeaderBlock>
                     <FormBlock onSubmit={(event) => changeBackground(event)}>
                         Background image
                         <StyledInput value={link} onChange={(e) => setLink(e.currentTarget.value)} placeholder="Link to img here" />

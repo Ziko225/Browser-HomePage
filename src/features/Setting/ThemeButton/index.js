@@ -1,16 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { StyledThemeIco, ThemeCaption, ThemeContainer, ThemeSwitcher } from "./styled";
 
-
 const ThemeButton = () => {
-    const [a, setA] = useState(false)
+    const darkThemeId = "isDarkTheme";
+    const [isDarkTheme, setIsDarkTheme] = useState(JSON.parse(localStorage.getItem(darkThemeId) || false));
+
+    const toggleTheme = () => {
+        setIsDarkTheme(!isDarkTheme);
+        setInterval(() => {
+            document.location.reload();
+        }, 400);
+    };
+
+    useEffect(() => {
+        localStorage.setItem(darkThemeId, JSON.stringify(isDarkTheme));
+    }, [isDarkTheme]);
 
     return (
         <ThemeContainer>
             <ThemeCaption >DARK MODE</ThemeCaption>
-            <ThemeSwitcher onClick={() => setA(!a)}><StyledThemeIco mode={a} /></ThemeSwitcher>
+            <ThemeSwitcher onClick={() => toggleTheme()}><StyledThemeIco darkTheme={isDarkTheme} /></ThemeSwitcher>
         </ThemeContainer>
-    )
+    );
 };
 
 export default ThemeButton;

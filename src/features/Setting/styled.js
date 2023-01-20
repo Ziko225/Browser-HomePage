@@ -27,6 +27,16 @@ export const SettingBlock = styled.div`
     min-width: 240px;
 `;
 
+export const HeaderBlock = styled.header`
+    display: flex;
+    align-items: flex-start;
+`;
+
+export const Titile = styled.h2`
+    margin-top: 0;
+    padding: 0;
+`;
+
 export const FormBlock = styled.form`
     display: flex;
     flex-direction: column;
