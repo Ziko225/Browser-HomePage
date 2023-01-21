@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/Browser-HomePage/static/js/main.d42a5c38.js",
+    "main.js": "/Browser-HomePage/static/js/main.50dd33bb.js",
     "static/js/787.28cb0dcd.chunk.js": "/Browser-HomePage/static/js/787.28cb0dcd.chunk.js",
     "static/media/backgroundDark.jpg": "/Browser-HomePage/static/media/backgroundDark.996ae6329ae2910bab32.jpg",
     "static/media/backgroundLight.jpg": "/Browser-HomePage/static/media/backgroundLight.d61db17109be8d920ec2.jpg",
@@ -8,11 +8,12 @@
     "static/media/themeIco.svg": "/Browser-HomePage/static/media/themeIco.70d95a365db526b0ae6d376bd0752e54.svg",
     "static/media/bar.svg": "/Browser-HomePage/static/media/bar.e0e0e9d582d405a5506c1c3b457d7fe5.svg",
     "static/media/settingIco.svg": "/Browser-HomePage/static/media/settingIco.5ef9b28644dc052d5104086e75decf7b.svg",
+    "static/media/searchIco.svg": "/Browser-HomePage/static/media/searchIco.c9f626b32027bd3f87306f00fb7d5ed6.svg",
     "index.html": "/Browser-HomePage/index.html",
-    "main.d42a5c38.js.map": "/Browser-HomePage/static/js/main.d42a5c38.js.map",
+    "main.50dd33bb.js.map": "/Browser-HomePage/static/js/main.50dd33bb.js.map",
     "787.28cb0dcd.chunk.js.map": "/Browser-HomePage/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.d42a5c38.js"
+    "static/js/main.50dd33bb.js"
   ]
 }
