@@ -10,7 +10,7 @@ export const ContentBlock = styled.div`
     margin: 20px;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 2px 2px 4px ${({ theme }) => theme.color.dark};
+    box-shadow: 1px 1px 5px ${({ theme }) => theme.color.dark};
     transition: 0.3s;
     &:hover {
         box-shadow: 0px 0px 8px 1px${({ theme }) => theme.color.smoke};
@@ -25,6 +25,7 @@ export const Block = styled.section`
     padding: 10px;
     max-width: 450px;
     height: 100%;
+    word-break: break-all;
 `;
 
 export const TaskElement = styled.div`

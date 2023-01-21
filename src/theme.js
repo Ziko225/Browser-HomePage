@@ -10,7 +10,7 @@ export const DarkTheme = {
         lightGrey: "#aaa",
         red: "#f00",
         grey: "#4448",
-        darkGrey: "#3339",
+        darkGrey: "#333b",
         background: "#222c",
         dark: "#111",
     }
@@ -23,8 +23,8 @@ export const lightTheme = {
         smoke: "#222b",
         lightGrey: "#555",
         red: "#f00",
-        grey: "#fff7",
-        darkGrey: "#fff9",
+        grey: "#fffa",
+        darkGrey: "#fffb",
         background: "#eee8",
         dark: "#fff5",
     }

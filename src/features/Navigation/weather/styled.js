@@ -6,7 +6,7 @@ export const Content = styled.div`
     justify-content: center;
     align-items: center;
     color: ${({theme}) => theme.color.white};
-    background-color: ${({theme}) => theme.color.grey};
+    background-color: ${({theme}) => theme.color.darkGrey};
     border: 2px outset ${({theme}) => theme.color.darkGrey};
     border-radius: 0 0 40px 0;
     filter: opacity(90%);
