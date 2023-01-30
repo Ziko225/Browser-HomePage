@@ -4,7 +4,7 @@ const Search = () => {
     return (
         <Content>
             <form action="http://www.google.com/search" method="get">
-                <InputBox><StyledSearchIco /><StyledInput placeholder="Search with google" type="text" name="q" /></InputBox>
+                <InputBox><StyledSearchIco /><StyledInput placeholder="Search with google" type="search" name="q" /></InputBox>
             </form>
         </Content>
     );
