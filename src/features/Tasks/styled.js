@@ -26,6 +26,9 @@ export const Block = styled.section`
     max-width: 450px;
     height: 100%;
     word-break: break-all;
+    @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}) {
+        max-width: 250px;
+    }
 `;
 
 export const TaskElement = styled.div`

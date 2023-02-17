@@ -32,6 +32,7 @@ export const Content = styled.div`
     width: 300px;
     height: 350px;
     border-radius: 10px;
+    z-index: 1;
 `;
 
 export const Block = styled.a`
