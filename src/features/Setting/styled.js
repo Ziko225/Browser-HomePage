@@ -16,7 +16,6 @@ export const OpenBarButton = styled.button`
     margin: 20px 20px 20px auto;
     border: none;
     background: none;
-    color: ${({ theme }) => theme.color.dark};
     cursor: pointer;
     bottom: 0;
     right: 0;
