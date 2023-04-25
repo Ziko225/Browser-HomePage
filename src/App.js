@@ -7,7 +7,7 @@ import GlobalStyle from "./globalStyled";
 import { lightTheme, DarkTheme } from "./theme";
 
 function App() {
-    const isDarkTheme = (JSON.parse(localStorage.getItem("isDarkTheme") || false))
+    const isDarkTheme = (JSON.parse(localStorage.getItem("isDarkTheme") || false));
 
     return (
         <ThemeProvider theme={isDarkTheme ? DarkTheme : lightTheme}>
