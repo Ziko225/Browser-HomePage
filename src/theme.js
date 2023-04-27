@@ -1,9 +1,9 @@
 const breakpoint = {
     tabletMax: "1317px",
     mobileMax: "900px",
-}
+};
 
-export const DarkTheme = {
+export const darkTheme = {
     breakpoint,
     color: {
         white: "#fff",

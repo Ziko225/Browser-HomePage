@@ -4,14 +4,15 @@ import Search from "./features/Search";
 import Setting from "./features/Setting";
 import Tasks from "./features/Tasks";
 import GlobalStyle from "./globalStyled";
-import { lightTheme, DarkTheme } from "./theme";
+import { darkTheme, lightTheme } from "./theme";
+import useBackgroundHandler from "./useBackgroundHandler";
 
 function App() {
-    const isDarkTheme = (JSON.parse(localStorage.getItem("isDarkTheme") || false));
+    const { isDarkTheme, backgroundUrl } = useBackgroundHandler();
 
     return (
-        <ThemeProvider theme={isDarkTheme ? DarkTheme : lightTheme}>
-            <GlobalStyle />
+        <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+            <GlobalStyle backgroundUrl={backgroundUrl} />
             <Navigation />
             <Search />
             <Tasks />

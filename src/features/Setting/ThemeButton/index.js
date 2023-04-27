@@ -1,29 +1,15 @@
-import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { StyledThemeIco, ThemeCaption, ThemeContainer, ThemeSwitcher } from "./styled";
+import { selectIsDarkTheme, toggleTheme } from "./themeSlice";
 
 const ThemeButton = () => {
-    const darkThemeId = "isDarkTheme";
-    const [isDarkTheme, setIsDarkTheme] = useState(JSON.parse(localStorage.getItem(darkThemeId) || false));
-    const [isToggled, setIsToggled] = useState(false);
-
-    const toggleTheme = () => {
-        if (!isToggled) {
-            setIsToggled(true);
-            setIsDarkTheme(!isDarkTheme);
-            setInterval(() => {
-                document.location.reload();
-            }, 400);
-        }
-    };
-
-    useEffect(() => {
-        localStorage.setItem(darkThemeId, JSON.stringify(isDarkTheme));
-    }, [isDarkTheme]);
+    const dispath = useDispatch();
+    const theme = useSelector(selectIsDarkTheme);
 
     return (
         <ThemeContainer>
             <ThemeCaption >DARK MODE</ThemeCaption>
-            <ThemeSwitcher onClick={() => toggleTheme()}><StyledThemeIco $darkTheme={isDarkTheme} /></ThemeSwitcher>
+            <ThemeSwitcher onClick={() => dispath(toggleTheme())}><StyledThemeIco $darkTheme={theme} /></ThemeSwitcher>
         </ThemeContainer>
     );
 };

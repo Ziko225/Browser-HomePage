@@ -44,7 +44,7 @@ export const Titile = styled.h2`
     padding: 0;
 `;
 
-export const FormBlock = styled.form`
+export const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
 `;
