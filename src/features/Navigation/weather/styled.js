@@ -15,7 +15,8 @@ export const Content = styled.div`
 export const Ico = styled.img`
     height: 30px;
     width: 30px;
+    margin-bottom: -4px;
 `;
 export const Element = styled.div`
-    padding: 5px;
+    padding-left: 5px;
 `;
