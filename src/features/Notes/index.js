@@ -2,7 +2,7 @@ import { Block, TaskElement, StyledButton, ContentBlock, StyledInput } from "./s
 import { getTasksFromLocalStorage, setTasksInLocalStorage } from "./tasksLocalStorage";
 import { useState, useEffect } from "react";
 
-const Tasks = () => {
+const Notes = () => {
     const [tasks, setTasks] = useState(getTasksFromLocalStorage());
     const [name, setName] = useState("");
 
@@ -12,7 +12,7 @@ const Tasks = () => {
 
     const addTask = (e) => {
         e.preventDefault();
-        if (name.length > 0) {
+        if (name.trim().length) {
             setTasks([...tasks, name]);
             setName("");
         };
@@ -24,21 +24,24 @@ const Tasks = () => {
             ...tasks.slice(index + 1),
         ]);
     };
-    <>
-        <form onSubmit={addTask}>
-            <StyledInput onChange={(e) => setName(e.currentTarget.value)} value={name} placeholder="Any note?"></StyledInput>
-        </form>
-        <Block>
-            {tasks.map((task, index) => (
-                <ContentBlock key={index}>
-                    <TaskElement >
-                        <StyledButton onClick={() => removeTask(index)}>x</StyledButton>
-                    </TaskElement>
-                    {task}
-                </ContentBlock>
-            ))}
-        </Block>
-    </>
+
+    return (
+        <>
+            <form onSubmit={addTask}>
+                <StyledInput onChange={(e) => setName(e.currentTarget.value)} value={name} placeholder="Any note?"></StyledInput>
+            </form>
+            <Block>
+                {tasks.map((task, index) => (
+                    <ContentBlock key={index}>
+                        <TaskElement >
+                            <StyledButton onClick={() => removeTask(index)}>x</StyledButton>
+                        </TaskElement>
+                        {task}
+                    </ContentBlock>
+                ))}
+            </Block>
+        </>
+    )
 };
 
-export default Tasks;
+export default Notes;

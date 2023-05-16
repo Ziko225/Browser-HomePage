@@ -2,7 +2,7 @@ import { ThemeProvider } from "styled-components";
 import Navigation from "./features/Navigation";
 import Search from "./features/Search";
 import Setting from "./features/Setting";
-import Tasks from "./features/Tasks";
+import Notes from "./features/Notes";
 import GlobalStyle from "./globalStyled";
 import { darkTheme, lightTheme } from "./theme";
 import useThemeToggle from "./hooks/useThemeToggle";
@@ -17,7 +17,7 @@ function App() {
             <GlobalStyle backgroundUrl={backgroundUrl} />
             <Navigation />
             <Search />
-            <Tasks />
+            <Notes />
             <Setting
                 isDarkTheme={isDarkTheme}
                 onThemeButtonClick={toggleTheme}
