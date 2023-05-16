@@ -1,24 +1,15 @@
-import { OpenBarButton, Content, Titile, SettingBlock, StyledInput, FormBlock, StyledButton, ButtonBlock, HeaderBlock, StyledForm } from "./styled";
+import { OpenBarButton, Content, Titile, SettingBlock, StyledInput, StyledButton, HeaderBlock, StyledForm } from "./styled";
 import { ReactComponent as SettingIco } from './settingIco.svg';
 import { useEffect } from "react";
 import { useRef } from "react";
-import { useState } from "react";
 import ThemeButton from "./ThemeButton";
-import { useDispatch } from "react-redux";
-import { changeBackgroundImg, resetBackground } from "./backgroundImgSlice";
+import useToggle from "../../hooks/useToggle";
+import { useState } from "react";
 
-const Setting = () => {
-    const [openSettingBar, setOpenSettingBar] = useState();
+const Setting = ({ onThemeButtonClick, onBackgroundChange, isDarkTheme, onDefaultBackground }) => {
+    const [openSettingBar, toggleOpenSettingBar, setOpenSettingBar] = useToggle();
     const wrapperRef = useRef(null);
     const [url, setUrl] = useState("");
-    const dispatch = useDispatch();
-
-    const changeBackground = (e) => {
-        e.preventDefault();
-        if (!url) return
-        dispatch(changeBackgroundImg(url));
-        setUrl("");
-    };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -32,31 +23,40 @@ const Setting = () => {
         };
     }, [wrapperRef]);
 
+    const changeBackgroundHandler = (e) => {
+        e.preventDefault();
+
+        if (!url) {
+            return;
+        };
+
+        onBackgroundChange(url);
+        setUrl("");
+    };
+
     return (
         <Content ref={wrapperRef}>
             <OpenBarButton
                 open={openSettingBar}
-                onClick={() => setOpenSettingBar(!openSettingBar)}>
+                onClick={toggleOpenSettingBar}>
                 <SettingIco />
             </OpenBarButton>
             {openSettingBar &&
                 <SettingBlock>
                     <HeaderBlock>
                         <Titile>Setting</Titile>
-                        <ThemeButton />
+                        <ThemeButton isDarkTheme={isDarkTheme} onThemeButtonClick={onThemeButtonClick} />
                     </HeaderBlock>
-                    <StyledForm onSubmit={(e) => changeBackground(e)}>
+                    <StyledForm onSubmit={(e) => changeBackgroundHandler(e)}>
                         Background url
                         <StyledInput
                             value={url}
                             onChange={(e) => setUrl(e.currentTarget.value)}
-                            placeholder="Image url (with .jpg .png)"
+                            placeholder="Image url: (jpg / png)"
                         />
-                        <ButtonBlock>
-                            <StyledButton>Save</StyledButton>
-                            <StyledButton setDefaultButton onClick={() => { dispatch(resetBackground()) }}>Set default</StyledButton>
-                        </ButtonBlock>
+                        <StyledButton>Save</StyledButton>
                     </StyledForm>
+                    <StyledButton setDefaultButton onClick={onDefaultBackground}>Set default</StyledButton>
                 </SettingBlock>
             }
         </Content>

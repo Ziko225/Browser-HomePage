@@ -28,6 +28,8 @@ export const OpenBarButton = styled.button`
 `;
 
 export const SettingBlock = styled.div`
+    display: flex;
+    flex-direction: column;
     background-color: ${({ theme }) => theme.color.background};
     padding: 20px 30px;
     border-radius: 6px;
@@ -56,27 +58,30 @@ export const StyledInput = styled.input`
 `;
 
 export const StyledButton = styled.button`
+    min-height: 35px;
     background-color: ${({ theme }) => theme.color.smoke};
     border: none;
-    border-radius: 6px;
+    border-radius: 5px;
     padding: 5px 10px;
-    align-self: flex-end;
     margin-bottom: 10px;
     cursor: pointer;
     color: ${({ theme }) => theme.color.dark};
     &:hover {
-        filter: brightness(85%);
+        filter: brightness(120%);
     }
     &:active {
-        filter: brightness(110%);
+        border: 2px inset ${({ theme }) => theme.color.grey};
     }
     ${({ setDefaultButton }) => setDefaultButton && css`
         background: none;
         color: ${({ theme }) => theme.color.smoke};
+        margin: 0;
+        align-self: flex-end;
+        &:hover {
+            text-decoration: underline
+        }
+        &:active {
+            border: 2px inset ${({ theme }) => theme.color.grey};
+        }
     `}
-`;
-
-export const ButtonBlock = styled.div`
-    display: flex;
-    justify-content: space-between;
 `;

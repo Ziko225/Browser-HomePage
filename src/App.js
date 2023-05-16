@@ -5,10 +5,12 @@ import Setting from "./features/Setting";
 import Tasks from "./features/Tasks";
 import GlobalStyle from "./globalStyled";
 import { darkTheme, lightTheme } from "./theme";
-import useBackgroundHandler from "./useBackgroundHandler";
+import useThemeToggle from "./hooks/useThemeToggle";
+import useBackgroundChanger from "./hooks/useBackgroundChanger";
 
 function App() {
-    const { isDarkTheme, backgroundUrl } = useBackgroundHandler();
+    const { isDarkTheme, toggleTheme } = useThemeToggle();
+    const { backgroundUrl, changeBackground, setDefaultBackground } = useBackgroundChanger(isDarkTheme);
 
     return (
         <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
@@ -16,7 +18,12 @@ function App() {
             <Navigation />
             <Search />
             <Tasks />
-            <Setting />
+            <Setting
+                isDarkTheme={isDarkTheme}
+                onThemeButtonClick={toggleTheme}
+                onBackgroundChange={changeBackground}
+                onDefaultBackground={setDefaultBackground}
+            />
         </ThemeProvider>
     );
 };

@@ -1,16 +1,12 @@
 import styled, { css } from "styled-components";
 import { ReactComponent as themeIco } from './themeIco.svg';
 
-export const ThemeContainer = styled.div`
+export const Container = styled.div`
     display: flex;
     align-items: center;
     margin-left: auto;
     font-weight: 700;
     font-size: 12px;
-`;
-
-export const ThemeCaption = styled.span`
-    color: ${({ theme }) => theme.color.white};
 `;
 
 export const ThemeSwitcher = styled.button`
