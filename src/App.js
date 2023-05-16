@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import Navigation from "./features/Navigation";
+import Header from "./features/Header";
 import Search from "./features/Search";
 import Setting from "./features/Setting";
 import Notes from "./features/Notes";
@@ -15,7 +15,7 @@ function App() {
     return (
         <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
             <GlobalStyle backgroundUrl={backgroundUrl} />
-            <Navigation />
+            <Header />
             <Search />
             <Notes />
             <Setting

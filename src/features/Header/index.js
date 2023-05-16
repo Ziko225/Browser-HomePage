@@ -2,7 +2,7 @@ import ServicesGoogle from "./ServicesGoogle";
 import { Nav } from "./styled";
 import Weather from "./weather";
 
-const Navigation = () => {
+const Header = () => {
   return (
     <Nav>
       <Weather />
@@ -11,4 +11,4 @@ const Navigation = () => {
   )
 };
 
-export default Navigation;
+export default Header;
